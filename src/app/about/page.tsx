@@ -58,7 +58,7 @@ const languages = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg",
   },
   {
-    label: "Spring Boot",
+    label: "Spring",
     value:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
   },
@@ -164,15 +164,17 @@ export default function About() {
               </div>
               <div>
                 <p>
-                  For the past year, I have also been the Vice Head of the RH
-                  Developers, a student-led organization that aims to build a
-                  community of developers in Raffles Hall. To check out all the
-                  projects that I have worked on:{" "}
+                  I have also had relevant work experience in the tech industry,
+                  and have worked on a variety of personal projects that
+                  interest me. My most recent project is called Wally AI which
+                  is a relationship wellness app that helps you communicate
+                  better offline!{" "}
                   <Link
                     href="/projects"
                     className="font-semibold text-indigo-600"
                   >
-                    Click here!<span aria-hidden="true">&rarr;</span>
+                    Click here to check out my projects!
+                    <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </p>
                 <br />
@@ -188,15 +190,18 @@ export default function About() {
                 </ul>
               </div>
             </div>
+          </div>
 
+          {/* Technologies section */}
+          <div>
             <div className="px-6">
-              <div className="mx-auto max-w-2xl pt-12 text-center sm:pt-12">
+              <div className="mx-auto max-w-2xl pt-12 text-center sm:pt-16">
                 <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                   Technology i know.
                 </h2>
               </div>
             </div>
-            <dl className="mt-12 grid grid-cols-1 gap-x-8 gap-y-12 sm:mt-20 sm:grid-cols-4 sm:gap-y-16 lg:mt-20 lg:grid-cols-8">
+            <dl className="mt-8 grid grid-cols-1 gap-x-8 gap-y-8 sm:mt-20 sm:grid-cols-6 sm:gap-y-12 lg:mt-14 lg:grid-cols-12">
               {languages.map((stat, statIdx) => (
                 <div
                   key={statIdx}
@@ -218,8 +223,82 @@ export default function About() {
           </div>
         </div>
 
+        {/* Hobbies section */}
+        <div className="relative isolate -z-10">
+          <div
+            className="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
+            aria-hidden="true"
+          >
+            <div
+              className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+              style={{
+                clipPath:
+                  "polygon(63.1% 29.5%, 100% 17.1%, 76.6% 3%, 48.4% 0%, 44.6% 4.7%, 54.5% 25.3%, 59.8% 49%, 55.2% 57.8%, 44.4% 57.2%, 27.8% 47.9%, 35.1% 81.5%, 0% 97.7%, 39.2% 100%, 35.2% 81.4%, 97.2% 52.8%, 63.1% 29.5%)",
+              }}
+            />
+          </div>
+          <div className="overflow-hidden">
+            <div className="mx-auto max-w-7xl px-6 pt-12 sm:pt-14 lg:px-8 lg:pt-16">
+              <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+                <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
+                  <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                    Things I like to do.
+                  </h2>
+                  <p className="relative mt-6 text-lg leading-6 text-gray-600 sm:max-w-md lg:max-w-none">
+                    When I am not in front of a monitor, I enjoy spending time
+                    on a wide variety hobbies! These include
+                  </p>
+                  <ul className="list-disc list-inside mt-4">
+                    <li>Playing Ultimate Frisbee</li>
+                    <li>Climbing indoor rocks (bouldering)</li>
+                    <li>Hitting the gym for a workout</li>
+                    <li>Playing chess, I&apos;m not that good though LOL</li>
+                    <li>Pushing my Brawl Stars rank</li>
+                  </ul>
+                </div>
+                <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
+                  <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+                    <div className="relative">
+                      <Image
+                        src="/about/ulti.jpg"
+                        alt="Ultimate Frisbee"
+                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        width={396}
+                        height={528}
+                      />
+                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                    </div>
+                  </div>
+                  <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
+                    <div className="relative">
+                      <Image
+                        src="/about/climbing.png"
+                        alt=""
+                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        width={396}
+                        height={528}
+                      />
+                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                    </div>
+                    <div className="relative">
+                      <Image
+                        src="/about/brawl_stars.png"
+                        alt=""
+                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        width={396}
+                        height={528}
+                      />
+                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* CTA section */}
-        <div className="relative isolate -z-10 mt-32 sm:mt-40">
+        <div className="relative isolate -z-10 mt-12 sm:mt-16">
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-white/5 px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
               <Image
