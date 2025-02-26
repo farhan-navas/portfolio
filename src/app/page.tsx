@@ -1,11 +1,10 @@
 import Image from "next/image";
-import NavBar from "./_components/nav-bar";
+// import NavBar from "./_components/nav-bar";
 import Link from "next/link";
 
 export default function Example() {
   return (
     <div className="bg-white">
-      <NavBar />
       <div className="relative">
         <div className="mx-auto max-w-7xl">
           <div className="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
