@@ -1,6 +1,7 @@
 import Image from "next/image";
 // import NavBar from "./_components/nav-bar";
 import Link from "next/link";
+import ProfileLinks from "./_components/profile-links";
 
 export default function Example() {
   return (
@@ -17,9 +18,9 @@ export default function Example() {
               <polygon points="0,0 90,0 50,100 0,100" />
             </svg>
 
-            <div className="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
+            <div className="relative px-6 py-36 sm:py-40 lg:px-8 lg:py-64 lg:pr-0">
               <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-                <div className="hidden sm:mb-10 sm:flex">
+                {/* <div className="hidden sm:mb-10 sm:flex">
                   <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                     Contact me{" "}
                     <Link
@@ -30,11 +31,11 @@ export default function Example() {
                       here! <span aria-hidden="true">&rarr;</span>
                     </Link>
                   </div>
-                </div>
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                </div> */}
+                <h1 className="text-4xl py-6 font-bold tracking-tight text-gray-900 sm:text-6xl">
                   Hello I&apos;m Farhan!
                 </h1>
-                <p className="mt-6 text-lg leading-8 text-gray-600">
+                <p className="text-lg leading-6 text-gray-600">
                   An aspiring Software Engineer, based in Singapore
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
@@ -46,7 +47,7 @@ export default function Example() {
                   </Link>
                   <Link
                     href="/projects"
-                    className="text-ssm font-semibold leading-6 text-gray-900"
+                    className="text-ssm font-semibold leading-6 text-gray-900 hover:text-indigo-600"
                   >
                     Check out my projects <span aria-hidden="true">→</span>
                   </Link>
@@ -55,14 +56,17 @@ export default function Example() {
             </div>
           </div>
         </div>
-        <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <Image
-            className="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
-            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
-            alt=""
-            width={1587}
-            height={1058}
-          />
+        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 flex items-center justify-center h-screen">
+          <div className="rounded-lg overflow-hidden p-4 flex flex-col items-center">
+            <Image
+              className="object-cover rounded-lg shadow-lg"
+              src="/home/profile-pic.jpg"
+              alt="Profile Picture"
+              width={350}
+              height={450}
+            />
+            <ProfileLinks />
+          </div>
         </div>
       </div>
     </div>

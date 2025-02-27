@@ -312,16 +312,17 @@ export default function About() {
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                   Get to know me!
                 </h2>
-                <p className="mt-6 text-lg leading-8 text-gray-700">
-                  If you think I could be a good fit for your team, feel free to
-                  contact me here!
+                <p className="mt-6 text-lg leading-6 text-gray-700">
+                  I am always looking for new opportunities to work on new apps
+                  or a software engineering internship. If you think I could be
+                  a good fit for your team, feel free to contact me here!
                 </p>
                 <div className="mt-10 flex">
                   <Link
                     href="/projects"
-                    className="text-sm font-semibold leading-6 text-indigo-400"
+                    className="text-md font-semibold leading-6 text-indigo-400"
                   >
-                    Click here!<span aria-hidden="true">&rarr;</span>
+                    Contact me here!<span aria-hidden="true">&rarr;</span>
                   </Link>
                 </div>
               </div>
