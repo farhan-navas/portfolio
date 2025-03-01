@@ -157,23 +157,29 @@ export default function About() {
                   Things I have been a part of in NUS:
                 </h3>
                 <ul className="list-disc list-inside mt-4">
-                  <li>Vice Head, Raffles Hall Developers</li>
-                  <li>Captain, Raffles Hall Ultimate Frisbee</li>
-                  <li>Software Engineer, NUS Fintech Society</li>
+                  <li>
+                    <strong>Vice Head</strong>, Raffles Hall Developers
+                  </li>
+                  <li>
+                    <strong>Captain</strong>, Raffles Hall Ultimate Frisbee
+                  </li>
+                  <li>
+                    <strong>Software Engineer</strong>, NUS Fintech Society
+                  </li>
                 </ul>
               </div>
               <div>
                 <p>
                   I have also had relevant work experience in the tech industry,
                   and have worked on a variety of personal projects that
-                  interest me. My most recent project is called Wally AI which
-                  is a relationship wellness app that helps you communicate
-                  better offline!{" "}
+                  interest me. My most recent project is Wally AI, a
+                  relationship wellness app powered by AI-driven language models
+                  to help users communicate better offline!{" "}
                   <Link
                     href="/projects"
                     className="font-semibold text-indigo-600"
                   >
-                    Click here to check out my projects!
+                    Check out my projects!
                     <span aria-hidden="true">&rarr;</span>
                   </Link>
                 </p>
@@ -182,10 +188,15 @@ export default function About() {
                   Relevant work experience I have had:
                 </h3>
                 <ul className="list-disc list-inside mt-4">
-                  <li>Java Backend Developer, Optimum Solutions</li>
-                  <li>Research Consultant, WorldQuant</li>
                   <li>
-                    Field Technician & Digital Marketing Intern, Fredrik Marine
+                    <strong>Java Backend Developer</strong>, Optimum Solutions
+                  </li>
+                  <li>
+                    <strong>Research Consultant</strong>, WorldQuant
+                  </li>
+                  <li>
+                    <strong>Field Technician & Digital Marketing Intern</strong>
+                    , Fredrik Marine
                   </li>
                 </ul>
               </div>
@@ -244,16 +255,29 @@ export default function About() {
                   <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                     Things I like to do.
                   </h2>
-                  <p className="relative mt-6 text-lg leading-6 text-gray-600 sm:max-w-md lg:max-w-none">
-                    When I am not in front of a monitor, I enjoy spending time
-                    on a wide variety hobbies! These include
+                  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+                    When I am <strong>not</strong> sitting in front of a
+                    monitor, I enjoy spending time on a wide variety of hobbies!
+                    Personally, I would say I am a relationship-oriented person
+                    and love spending time with close friends and family. My
+                    other hobbies are kind of all over the place, but here are a
+                    few things I enjoy most:
                   </p>
-                  <ul className="list-disc list-inside mt-4">
-                    <li>Playing Ultimate Frisbee</li>
-                    <li>Climbing indoor rocks (bouldering)</li>
+                  <ul className="list-disc list-inside mt-4 leading-7 text-gray-700">
+                    <li>Playing ultimate frisbee with my team, RHU</li>
+                    <li>
+                      Climbing fake rocks and hoping I don&apos;t break
+                      something again.. (MCL tear oops)
+                    </li>
                     <li>Hitting the gym for a workout</li>
-                    <li>Playing chess, I&apos;m not that good though LOL</li>
-                    <li>Pushing my Brawl Stars rank</li>
+                    <li>
+                      Playing chess, I&apos;m not that good though LOL I just
+                      like doing puzzles
+                    </li>
+                    <li>
+                      Pushing my Brawl Stars rank and questioning my life
+                      choices when I lose 😵‍💫
+                    </li>
                   </ul>
                 </div>
                 <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
@@ -303,7 +327,7 @@ export default function About() {
             <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-white/5 px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
               <Image
                 className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
-                src="https://images.unsplash.com/photo-1519338381761-c7523edc1f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                src="/about/contact.jpg"
                 alt=""
                 width={600}
                 height={384}
@@ -312,7 +336,7 @@ export default function About() {
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                   Get to know me!
                 </h2>
-                <p className="mt-6 text-lg leading-6 text-gray-700">
+                <p className="mt-6 text-lg leading-8 text-gray-700">
                   I am always looking for new opportunities to work on new apps
                   or a software engineering internship. If you think I could be
                   a good fit for your team, feel free to contact me here!
@@ -320,7 +344,7 @@ export default function About() {
                 <div className="mt-10 flex">
                   <Link
                     href="/projects"
-                    className="text-md font-semibold leading-6 text-indigo-400"
+                    className="text-lg font-semibold leading-6 text-indigo-400"
                   >
                     Contact me here!<span aria-hidden="true">&rarr;</span>
                   </Link>
