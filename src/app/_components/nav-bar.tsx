@@ -4,8 +4,8 @@ import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
+import { useTheme } from "next-themes";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -17,6 +17,7 @@ const navigation = [
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme } = useTheme();
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
@@ -25,10 +26,18 @@ export default function NavBar() {
         className="flex items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">frhnnvs</span>
-            <img alt="" src="frhnnvs-logo.png" className="h-8 w-auto" />
-          </a>
+          {theme === "dark" && (
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">frhnnvs</span>
+              <img alt="" src="frhnnvs-logo-dark.png" className="h-8 w-auto" />
+            </a>
+          )}
+          {theme === "light" && (
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">frhnnvs</span>
+              <img alt="" src="frhnnvs-logo-light.png" className="h-8 w-auto" />
+            </a>
+          )}
         </div>
         <div className="flex lg:hidden">
           <button
