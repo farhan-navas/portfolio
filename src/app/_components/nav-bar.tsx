@@ -6,6 +6,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import { ModeToggle } from "./mode-toggle";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -26,18 +27,20 @@ export default function NavBar() {
         className="flex items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          {theme === "dark" && (
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">frhnnvs</span>
-              <img alt="" src="frhnnvs-logo-dark.png" className="h-8 w-auto" />
-            </a>
-          )}
-          {theme === "light" && (
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">frhnnvs</span>
-              <img alt="" src="frhnnvs-logo-light.png" className="h-8 w-auto" />
-            </a>
-          )}
+          <Link href="/" className="-m-1.5 p-1.5 block">
+            <span className="sr-only">frhnnvs</span>
+            <img
+              alt="frhnnvs logo light"
+              src="/frhnnvs-logo-dark.png"
+              className="hidden h-8 w-auto dark:block"
+            />
+            <span className="sr-only">frhnnvs</span>
+            <img
+              alt="frhnnvs logo dark"
+              src="/frhnnvs-logo-light.png"
+              className="h-8 w-auto dark:hidden"
+            />
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
