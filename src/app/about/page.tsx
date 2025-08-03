@@ -130,10 +130,10 @@ export default function About() {
         {/* Header section */}
         <div className="px-6 pt-14 lg:px-8">
           <div className="mx-auto max-w-2xl pt-24 text-center sm:pt-40">
-            <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
               About
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8 text-muted-foreground">
               An aspiring Software Engineer, that aims to innovate and inspire
             </p>
           </div>
@@ -142,7 +142,7 @@ export default function About() {
         {/* Content section */}
         <div className="mx-auto mt-20 max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <div className="grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-gray-700 lg:max-w-none lg:grid-cols-2">
+            <div className="grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-muted-foreground lg:max-w-none lg:grid-cols-2">
               <div>
                 <p>
                   Hi there, I&apos;m Farhan! An aspiring Full-Stack Engineer
@@ -177,7 +177,7 @@ export default function About() {
                   to help users communicate better offline!{" "}
                   <Link
                     href="/projects"
-                    className="font-semibold text-indigo-600"
+                    className="font-semibold text-primary"
                   >
                     Check out my projects!
                     <span aria-hidden="true">&rarr;</span>
@@ -207,7 +207,7 @@ export default function About() {
           <div>
             <div className="px-6">
               <div className="mx-auto max-w-2xl pt-12 text-center sm:pt-16">
-                <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
                   Technology i know.
                 </h2>
               </div>
@@ -216,13 +216,13 @@ export default function About() {
               {languages.map((stat, statIdx) => (
                 <div
                   key={statIdx}
-                  className="flex flex-col-reverse gap-y-3 border-l border-white/20 pl-6"
+                  className="flex flex-col-reverse gap-y-3 border-l border-border pl-6"
                 >
-                  <dt className="text-base text-center font-semibold leading-7 text-gray-900">
+                  <dt className="text-base text-center font-semibold leading-7 text-foreground">
                     {stat.label}
                   </dt>
                   <Image
-                    className="text-3xl font-semibold tracking-tight text-gray-700"
+                    className="text-3xl font-semibold tracking-tight text-muted-foreground"
                     alt={stat.label}
                     src={stat.value}
                     width={79}
@@ -252,10 +252,10 @@ export default function About() {
             <div className="mx-auto max-w-7xl px-6 pt-12 sm:pt-14 lg:px-8 lg:pt-16">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                  <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
                     Things I like to do.
                   </h2>
-                  <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+                  <p className="relative mt-6 text-lg leading-8 text-muted-foreground sm:max-w-md lg:max-w-none">
                     When I am <strong>not</strong> sitting in front of a
                     monitor, I enjoy spending time on a wide variety of hobbies!
                     Personally, I would say I am a relationship-oriented person
@@ -263,7 +263,7 @@ export default function About() {
                     other hobbies are kind of all over the place, but here are a
                     few things I enjoy most:
                   </p>
-                  <ul className="list-disc list-inside mt-4 leading-7 text-gray-700">
+                  <ul className="list-disc list-inside mt-4 leading-7 text-muted-foreground">
                     <li>Playing ultimate frisbee with my team, RHU</li>
                     <li>
                       Climbing fake rocks and hoping I don&apos;t break
@@ -286,11 +286,11 @@ export default function About() {
                       <Image
                         src="/about/ulti.jpg"
                         alt="Ultimate Frisbee"
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        className="aspect-[2/3] w-full rounded-xl bg-muted/50 object-cover shadow-lg"
                         width={396}
                         height={528}
                       />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-border" />
                     </div>
                   </div>
                   <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
@@ -298,21 +298,21 @@ export default function About() {
                       <Image
                         src="/about/climbing.png"
                         alt=""
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        className="aspect-[2/3] w-full rounded-xl bg-muted/50 object-cover shadow-lg"
                         width={396}
                         height={528}
                       />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-border" />
                     </div>
                     <div className="relative">
                       <Image
                         src="/about/brawl_stars.png"
                         alt=""
-                        className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                        className="aspect-[2/3] w-full rounded-xl bg-muted/50 object-cover shadow-lg"
                         width={396}
                         height={528}
                       />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-border" />
                     </div>
                   </div>
                 </div>
@@ -324,7 +324,7 @@ export default function About() {
         {/* CTA section */}
         <div className="relative isolate -z-10 mt-12 sm:mt-16">
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-white/5 px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
+            <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-muted/50 px-6 py-16 ring-1 ring-border sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
               <Image
                 className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
                 src="/about/contact.jpg"
@@ -333,10 +333,10 @@ export default function About() {
                 height={384}
               />
               <div className="w-full flex-auto">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                   Get to know me!
                 </h2>
-                <p className="mt-6 text-lg leading-8 text-gray-700">
+                <p className="mt-6 text-lg leading-8 text-muted-foreground">
                   I am always looking for new opportunities to work on new apps
                   or a software engineering internship. If you think I could be
                   a good fit for your team, feel free to contact me here!
@@ -344,7 +344,7 @@ export default function About() {
                 <div className="mt-10 flex">
                   <Link
                     href="/projects"
-                    className="text-lg font-semibold leading-6 text-indigo-400"
+                    className="text-lg font-semibold leading-6 text-primary"
                   >
                     Contact me here!<span aria-hidden="true">&rarr;</span>
                   </Link>

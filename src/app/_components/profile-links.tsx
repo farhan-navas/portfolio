@@ -5,7 +5,7 @@ export default function ProfileLinks() {
     <div className="mt-4 flex flex-row gap-x-2 items-center justify-center">
       <Link
         href="https://www.linkedin.com/in/farhan-navas/"
-        className="text-gray-400 hover:text-gray-500 flex items-center gap-x-2"
+        className="text-muted-foreground hover:text-muted-foreground/80 flex items-center gap-x-2"
       >
         <svg
           className="h-6 w-6"
@@ -22,7 +22,7 @@ export default function ProfileLinks() {
       </Link>
       <Link
         href="https://github.com/farhan-navas"
-        className="text-gray-400 hover:text-gray-500 flex items-center gap-x-2"
+        className="text-muted-foreground hover:text-muted-foreground/80 flex items-center gap-x-2"
       >
         <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
           <path
@@ -34,7 +34,7 @@ export default function ProfileLinks() {
       </Link>
       <Link
         href="mailto:farhanmnavas@gmail.com"
-        className="text-gray-400 hover:text-gray-500 flex items-center gap-x-2"
+        className="text-muted-foreground hover:text-muted-foreground/80 flex items-center gap-x-2"
       >
         <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 12.713l11.573-8.09c.269-.188.427-.497.427-.823C24 2.805 23.195 2 22.178 2H1.822C.805 2 0 2.805 0 3.8c0 .326.158.635.427.823L12 12.713z" />
@@ -43,7 +43,7 @@ export default function ProfileLinks() {
       </Link>
       <Link
         href="tel:+6587421628"
-        className="text-gray-400 hover:text-gray-500 flex items-center gap-x-2"
+        className="text-muted-foreground hover:text-muted-foreground/80 flex items-center gap-x-2"
       >
         <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
           <path

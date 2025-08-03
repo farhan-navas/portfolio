@@ -5,12 +5,12 @@ import ProfileLinks from "./_components/profile-links";
 
 export default function Example() {
   return (
-    <div className="bg-white">
+    <div className="bg-background">
       <div className="relative">
         <div className="mx-auto max-w-7xl">
           <div className="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
             <svg
-              className="absolute inset-y-0 right-8 hidden h-full w-80 translate-x-1/2 transform fill-white lg:block"
+              className="absolute inset-y-0 right-8 hidden h-full w-80 translate-x-1/2 transform fill-background lg:block"
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
               aria-hidden="true"
@@ -21,33 +21,33 @@ export default function Example() {
             <div className="relative px-6 py-36 sm:py-40 lg:px-8 lg:py-64 lg:pr-0">
               <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
                 {/* <div className="hidden sm:mb-10 sm:flex">
-                  <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                  <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-muted-foreground ring-1 ring-border hover:ring-border/20">
                     Contact me{" "}
                     <Link
                       href="/contact"
-                      className="whitespace-nowrap font-semibold text-indigo-600"
+                      className="whitespace-nowrap font-semibold text-primary"
                     >
                       <span className="absolute inset-0" aria-hidden="true" />
                       here! <span aria-hidden="true">&rarr;</span>
                     </Link>
                   </div>
                 </div> */}
-                <h1 className="text-4xl py-6 font-bold tracking-tight text-gray-900 sm:text-6xl">
+                <h1 className="text-4xl py-6 font-bold tracking-tight text-foreground sm:text-6xl">
                   Hello I&apos;m Farhan!
                 </h1>
-                <p className="text-lg leading-6 text-gray-600">
+                <p className="text-lg leading-6 text-muted-foreground">
                   An aspiring Software Engineer, based in Singapore
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
                   <Link
                     href="/contact"
-                    className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     Get in touch
                   </Link>
                   <Link
                     href="/projects"
-                    className="text-ssm font-semibold leading-6 text-gray-900 hover:text-indigo-600"
+                    className="text-ssm font-semibold leading-6 text-foreground hover:text-primary"
                   >
                     Check out my projects <span aria-hidden="true">→</span>
                   </Link>
