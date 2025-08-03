@@ -10,17 +10,17 @@ import {
 import Link from "next/link";
 
 const colorMap: Record<string, string> = {
-  red: "text-white bg-red-500",
-  light_blue: " text-white bg-blue-400",
-  blue: "text-white bg-blue-600",
+  red: "text-destructive-foreground bg-destructive",
+  light_blue: "text-primary-foreground bg-primary",
+  blue: "text-primary-foreground bg-primary",
   green: "text-white bg-green-600",
   yellow: "text-white bg-yellow-500",
   orange: "text-white bg-orange-500",
   purple: "text-white bg-purple-500",
   pink: "text-white bg-pink-500",
-  gray: "text-white bg-gray-500",
-  black: "text-white bg-black",
-  white: "bg-gray-100 text-black",
+  gray: "text-muted-foreground bg-muted",
+  black: "text-background bg-foreground",
+  white: "text-foreground bg-background",
 };
 
 export default function Project() {
@@ -30,12 +30,12 @@ export default function Project() {
   return (
     <div>
       {currProj && (
-        <div className="bg-white px-6 py-32 lg:px-8">
-          <div className="mx-auto max-w-5xl text-base leading-7 text-gray-700">
-            <p className="text-base font-semibold leading-7 text-indigo-600">
+        <div className="bg-background px-6 py-32 lg:px-8">
+          <div className="mx-auto max-w-5xl text-base leading-7 text-muted-foreground">
+            <p className="text-base font-semibold leading-7 text-primary">
               Introducing
             </p>
-            <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               {currProj.title}
             </h1>
             <p className="mt-6 text-xl leading-8">{currProj.firstParagraph}</p>
@@ -43,20 +43,20 @@ export default function Project() {
               <div className="flex mt-4 gap-x-2">
                 <Link
                   href={currProj.appUrl}
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 >
                   Check out the app!
                 </Link>
 
                 <Link
                   href={currProj.githubUrl}
-                  className="rounded-md bg-gray-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800"
+                  className="rounded-md bg-secondary px-3.5 py-2.5 text-sm font-semibold text-secondary-foreground shadow-sm hover:bg-secondary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
                 >
                   Repo link
                 </Link>
               </div>
             )}
-            <h2 className="mt-8 text-2xl font-semibold leading-7 text-gray-900">
+            <h2 className="mt-8 text-2xl font-semibold leading-7 text-foreground">
               Stack
             </h2>
             {currProj.stack?.map((tech) => {
@@ -81,23 +81,23 @@ export default function Project() {
                   width={1310}
                   height={873}
                 />
-                <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
+                <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-muted-foreground">
                   <InformationCircleIcon
-                    className="mt-0.5 h-5 w-5 flex-none text-gray-300"
+                    className="mt-0.5 h-5 w-5 flex-none text-muted-foreground/70"
                     aria-hidden="true"
                   />
                   {currProj.imageAlt}
                 </figcaption>
               </figure>
-              <h3 className="mt-12 text-lg font-semibold leading-7 text-gray-900">
+              <h3 className="mt-12 text-lg font-semibold leading-7 text-foreground">
                 Some key features of {currProj.title} include:
               </h3>
-              <ul role="list" className="mt-2 space-y-4 text-gray-600">
+              <ul role="list" className="mt-2 space-y-4 text-muted-foreground">
                 {currProj.features?.map((feature) => {
                   return (
                     <li key={feature} className="flex gap-x-3">
                       <CheckCircleIcon
-                        className="mt-1 h-5 w-5 flex-none text-indigo-600"
+                        className="mt-1 h-5 w-5 flex-none text-primary"
                         aria-hidden="true"
                       />
                       <span>{feature}</span>
@@ -107,8 +107,8 @@ export default function Project() {
               </ul>
               {/* Add this figure block later on! */}
 
-              {/* <figure className="mt-10 border-l border-indigo-600 pl-9">
-                <blockquote className="font-semibold text-gray-900">
+              {/* <figure className="mt-10 border-l border-primary pl-9">
+                <blockquote className="font-semibold text-foreground">
                   <p>
                     “Vel ultricies morbi odio facilisi ultrices accumsan donec
                     lacus purus. Lectus nibh ullamcorper ac dictum justo in
@@ -118,14 +118,14 @@ export default function Project() {
                 </blockquote>
                 <figcaption className="mt-6 flex gap-x-4">
                   <Image
-                    className="h-6 w-6 flex-none rounded-full bg-gray-50"
+                    className="h-6 w-6 flex-none rounded-full bg-muted"
                     src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                     alt=""
                     width={24}
                     height={24}
                   />
                   <div className="text-sm leading-6">
-                    <strong className="font-semibold text-gray-900">
+                    <strong className="font-semibold text-foreground">
                       Maria Hill
                     </strong>{" "}
                     – Marketing Manager
@@ -134,7 +134,7 @@ export default function Project() {
               </figure> */}
             </div>
             <div className="mt-16">
-              <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+              <h2 className="text-2xl font-bold tracking-tight text-foreground">
                 Final Thoughts
               </h2>
               <p className="mt-6">{currProj.thirdParagraph}</p>
