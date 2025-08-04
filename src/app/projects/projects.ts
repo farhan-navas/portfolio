@@ -6,6 +6,7 @@ interface Tech {
 interface Project {
   id: number;
   title: string;
+  subtitle: string;
   href: string;
   slug: string;
   date: string;
@@ -57,6 +58,7 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "Wally 1.0",
+    subtitle: "An AI-driven relationship wellness companion",
     href: "/projects/wally",
     slug: "wally",
     date: "2024/2025",
@@ -108,6 +110,7 @@ export const projects: Project[] = [
   {
     id: 2,
     title: "Eva Task Manager",
+    subtitle: "Hybrid CLI + GUI productivity powerhouse",
     href: "/projects/eva-task-manager",
     slug: "eva-task-manager",
     date: "2024/2025",
@@ -139,6 +142,7 @@ export const projects: Project[] = [
   {
     id: 3,
     title: "Connect 4 Agent",
+    subtitle: "lightning-fast, alpha-beta-pruned Connect 4 champion",
     href: "/projects/connect-4",
     slug: "connect-4",
     date: "2024",
@@ -174,6 +178,7 @@ export const projects: Project[] = [
   {
     id: 4,
     title: "RHOC Supper Bidding System",
+    subtitle: "Real-time auction system at your fingertips",
     href: "/projects/rhoc-supper-bidding",
     slug: "rhoc-supper-bidding",
     date: "2024",
@@ -216,6 +221,7 @@ export const projects: Project[] = [
   {
     id: 5,
     title: "ARIMA-LSTM Sentiment Analysis",
+    subtitle: "ETH price forecasts powered by ARIMA & LSTM",
     href: "/projects/arima-lstm-sentiment-analysis",
     slug: "arima-lstm-sentiment-analysis",
     date: "2023/2024",

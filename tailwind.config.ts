@@ -10,9 +10,24 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        wave: {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "15%": { transform: "rotate(10deg)" },
+          "30%": { transform: "rotate(-6deg)" },
+          "40%": { transform: "rotate(10deg)" },
+          "50%": { transform: "rotate(-4deg)" },
+          "60%": { transform: "rotate(6deg)" },
+          "70%": { transform: "rotate(0deg)" },
+        },
+      },
+      animation: {
+        wave: "wave 1.5s ease-in-out",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        maintext: "hsl(var(--main-text))",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",

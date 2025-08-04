@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { projects } from "../data";
+import { projects } from "../projects";
 import Image from "next/image";
 import {
   CheckCircleIcon,
