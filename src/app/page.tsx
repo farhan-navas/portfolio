@@ -15,6 +15,7 @@ import { useState } from "react";
 import { projects } from "./projects/projects";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import Snowfall from "./_components/snowfall";
 
 export default function HomePage() {
   const [api, setApi] = useState<CarouselApi>();
@@ -61,7 +62,7 @@ export default function HomePage() {
 
           {/* right column */}
           <div className="flex flex-col items-center justify-center md:w-1/2 mt-12 md:mt-0 space-y-8">
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground lg:pt-8">
               I deliver high-performance web and mobile solutions—whether
               transforming legacy systems into modular platforms or rolling out
               AI-driven chatbots. I blend precise engineering with creative
@@ -70,10 +71,17 @@ export default function HomePage() {
 
             <div className="flex space-x-4">
               <Button
-                onClick={() => router.push("/contact")}
                 className="bg-maintext hover:bg-white hover:text-maintext"
               >
-                Get in Touch
+                <a
+                  href={`mailto:frhnnvs@gmail.com?subject=${encodeURIComponent(
+                    "Hey Farhan!"
+                  )}&body=${encodeURIComponent(
+                    "Hi Farhan,\n\nI found you via your portfolio site and wanted to reach out about..."
+                  )}`}
+                >
+                  Get in Touch
+                </a>
               </Button>
               <Button
                 onClick={() => router.push("/projects")}
@@ -85,8 +93,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <div>
-          <h2 className="text-lg font-semibold leading-tight">Projects</h2>
+        <div className="max-w-5xl mx-auto px-4 lg:mt-1 xl:mt-16">
+          <h2 className="text-2xl font-bold leading-tight">Projects</h2>
           <Carousel
             opts={{ align: "start" }}
             className="w-full mt-4"
@@ -98,25 +106,34 @@ export default function HomePage() {
                   key={p.title}
                   className="pl-4 md:pl-8 lg:pl-12 md:basis-1/2 lg:basis-1/3"
                 >
-                  <Link href={p.href} className="group block">
-                    <div className="relative h-80 w-full overflow-hidden rounded-2xl shadow-lg transition-transform">
-                      <div className="relative w-full h-full">
+                  <Link href={p.href} className="block group">
+                    {/* Card */}
+                    <article className="rounded-2xl border border-border bg-card shadow-sm transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-md overflow-hidden">
+                      {/* Image (top) */}
+                      <div className="relative aspect-[16/9] w-full overflow-hidden">
                         <Image
                           src={p.homeImageUrl ?? p.imageUrl}
                           alt={p.imageAlt}
                           fill
                           className="object-cover"
+                          sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
+                          priority={false}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent" />
                       </div>
-                      <div className="absolute inset-0 bg-black/30 opacity-0 transition-opacity group-hover:opacity-50" />
-                      <div className="absolute top-4 left-4">
-                        <h3 className="text-xl font-semibold text-white">
-                          {p.title}
-                        </h3>
-                        <p className="mt-1 text-sm text-white">{p.subtitle}</p>
+
+                      {/* Content (bottom) */}
+                      <div className="p-6 border-t border-border">
+                        <div className="flex items-center gap-3">
+                          <h3 className="text-xl font-semibold text-foreground">
+                            {p.title}
+                          </h3>
+                        </div>
+
+                        <p className="mt-3 text-lg leading-7 text-muted-foreground">
+                          {p.subtitle}
+                        </p>
                       </div>
-                    </div>
+                    </article>
                   </Link>
                 </CarouselItem>
               ))}
@@ -154,6 +171,7 @@ export default function HomePage() {
         <div>
           <ProfileLinks />
         </div>
+        <Snowfall />
       </main>
     </div>
   );

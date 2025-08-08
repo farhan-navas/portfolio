@@ -45,6 +45,7 @@ const allTech: Tech[] = [
   { name: "Stripe", color: "purple" },
   { name: "React Native", color: "blue" },
   { name: "Python", color: "green" },
+  { name: "FastAPI", color: "blue" },
   { name: "C++", color: "blue" },
   { name: "Firebase Firestore", color: "orange" },
   { name: "Firebase Authentication", color: "green" },
@@ -57,6 +58,51 @@ const getTechStack = (names: string[]): Tech[] => {
 export const projects: Project[] = [
   {
     id: 1,
+    title: "Monday",
+    subtitle: "My personal iOS butler, built with Flutter",
+    href: "/projects/monday",
+    slug: "monday",
+    date: "2025",
+    type: "Mobile (Flutter, iOS-first)",
+    description: `An opinionated personal assistant app focused on day planning and digital well-being.
+    Monday starts as a UI-first prototype (Flutter) with iOS-leaning features like App Intents,
+    and will gradually add integrations for Calendar, Screen Time, and Health.`,
+    // homeImageUrl: "/projects/monday/monday-home.png",
+    imageUrl: "/projects/monday/monday-home.png",
+    imageAlt: "Monday app — dashboard and task views",
+    githubUrl: "https://github.com/farhan-navas/monday",
+    // no appUrl yet => button won't render
+    firstParagraph: `Monday is my take on a personal iOS butler. I’m using Flutter to move fast on UI and iterate on
+    a clean UX before wiring real integrations. The goal is a daily companion that helps me plan,
+    block distractions, and surface the right info at the right time.`,
+    secondParagraph: `I’m building the core screens first — Weather, Tasks, Screen Time lists, Health and Sleep dashboards,
+    plus Settings/Pricing — then layering in iOS-native features via Swift App Intents. Calendar,
+    Screen Time, and HealthKit integrations are on the roadmap, with local data via SharedPreferences.`,
+    thirdParagraph: `Once the UX feels right, I’ll add the brains: Calendar automation, Siri shortcuts/intents,
+    and selective AI assistance (kept local where sensible). If needed, I may add a small .NET backend later.`,
+    features: [
+      "Flutter UI for Weather, Tasks, Health, Sleep, and Settings",
+      "Task list UX: add, multi-delete, and swipe gestures",
+      "Screen-blocking list UI (time-limit / time-of-day profiles)",
+      "Image-first card design with rounded corners and subtle shadowing",
+      "Dark mode friendly design",
+      "iOS App Intent: OpenStatusReport (Swift)",
+      "Planned: Calendar + Screen Time + HealthKit integrations",
+      "Planned: Local ‘Memories’ store and SharedPreferences persistence",
+    ],
+    stack: getTechStack([
+      "Flutter",
+      "Dart",
+      "Swift (App Intents)",
+      "Xcode / iOS",
+      "SharedPreferences",
+      "Screen Time API",
+      "HealthKit",
+      "Calendar",
+    ]),
+  },
+  {
+    id: 2,
     title: "Wally 1.0",
     subtitle: "An AI-driven relationship wellness companion",
     href: "/projects/wally",
@@ -108,7 +154,48 @@ export const projects: Project[] = [
     ]),
   },
   {
-    id: 2,
+    id: 3,
+    title: "Market Inspection Agent",
+    subtitle: "AI-powered real estate intelligence for CapitaLand",
+    href: "/projects/market-inspection-agent",
+    slug: "market-inspection-agent",
+    date: "2025",
+    type: "Full-stack • AI Agents",
+    description: `An agentic system that discovers industry trends, enriches companies with reliable signals,
+    and surfaces ranked real-estate opportunities. I led the team build end-to-end—from the FastAPI
+    orchestration to the React dashboard—and this project directly led to internship offers.`,
+    // homeImageUrl: "/projects/market-inspection-agent/home.png",
+    imageUrl: "/projects/market-inspection-agent/home.png",
+    imageAlt: "Market Inspection Agent — ranked opportunities dashboard",
+    githubUrl: "https://github.com/farhan-navas/market-inspection-agent",
+    firstParagraph: `Built for the CapitaLand AI Hackathon, Market Inspection Agent is an agentic pipeline
+    that continuously scans the market, enriches entities, and highlights where demand may convert into
+    tenancy. I designed the workflows and led implementation across backend, orchestration, and UI.`,
+    secondParagraph: `The backend is a Python FastAPI service that coordinates Azure AI Foundry agents via
+    Semantic Kernel and the OpenAI API. The frontend is a lightweight React + TypeScript app (Vite/SWC,
+    Tailwind, shadcn) for querying, reviewing leads, and generating status reports on demand.`,
+    thirdParagraph: `Outcomes: faster opportunity discovery, fewer manual lookups, and a repeatable pattern
+    the team can extend (new industries/regions) without re-architecting. Higher management feedback was
+    strong enough that our team received internship offers off the back of this build.`,
+    features: [
+      "Form-driven scanning by industry, region, and service needs",
+      "Multi-agent orchestration with Azure AI Foundry",
+      "Company enrichment (news, leadership, basic firmographics)",
+      "Smart ranking score for opportunities",
+      "Interactive dashboard with filters and details",
+      "On-demand status report generation per company",
+      "Retrieval chat over ingested market data",
+      "Simple deployment split: /backend (FastAPI) and /frontend (React)",
+    ],
+    stack: getTechStack([
+      // Frontend
+      "React", "TypeScript", "Vite (SWC)", "TailwindCSS", "shadcn/ui", "React Router", "Zod", "Axios",
+      // Backend
+      "Python", "FastAPI", "Azure AI Foundry", "Semantic Kernel", "OpenAI API"
+    ]),
+  },
+  {
+    id: 4,
     title: "Eva Task Manager",
     subtitle: "Hybrid CLI + GUI productivity powerhouse",
     href: "/projects/eva-task-manager",
@@ -140,9 +227,9 @@ export const projects: Project[] = [
     stack: getTechStack(["Java", "JavaFX", "Github Pages"]),
   },
   {
-    id: 3,
+    id: 5,
     title: "Connect 4 Agent",
-    subtitle: "lightning-fast, alpha-beta-pruned Connect 4 champion",
+    subtitle: "Lightning-fast, alpha-beta-pruned Connect 4 champion",
     href: "/projects/connect-4",
     slug: "connect-4",
     date: "2024",
@@ -176,8 +263,8 @@ export const projects: Project[] = [
     stack: getTechStack(["Python", "C++"]),
   },
   {
-    id: 4,
-    title: "RHOC Supper Bidding System",
+    id: 6,
+    title: "RHOC Bidding System",
     subtitle: "Real-time auction system at your fingertips",
     href: "/projects/rhoc-supper-bidding",
     slug: "rhoc-supper-bidding",
@@ -219,8 +306,8 @@ export const projects: Project[] = [
   },
 
   {
-    id: 5,
-    title: "ARIMA-LSTM Sentiment Analysis",
+    id: 7,
+    title: "ETH Sentiment Analysis",
     subtitle: "ETH price forecasts powered by ARIMA & LSTM",
     href: "/projects/arima-lstm-sentiment-analysis",
     slug: "arima-lstm-sentiment-analysis",

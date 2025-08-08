@@ -12,7 +12,6 @@ const navigation = [
   { name: "Resume", href: "/resume" },
   { name: "Projects", href: "/projects" },
   { name: "About", href: "/about" },
-  { name: "Contact Me", href: "/contact" },
 ];
 
 export default function NavBar() {
@@ -24,41 +23,43 @@ export default function NavBar() {
         aria-label="Global"
         className="flex h-full items-center justify-between px-6 lg:px-8"
       >
-        <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5 block">
-            <img
-              alt="frhnnvs logo light"
-              src="/frhnnvs-logo-dark.png"
-              className="hidden h-8 w-auto dark:block"
-            />
-            <img
-              alt="frhnnvs logo dark"
-              src="/frhnnvs-logo-light.png"
-              className="h-8 w-auto dark:hidden"
-            />
-          </Link>
-        </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-muted-foreground"
-          >
-            <span className="sr-only">frhnnvs</span>
-            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
-          </button>
-        </div>
-        <div className="hidden lg:flex lg:items-center lg:gap-x-12">
-          {navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-sm/6 font-semibold text-foreground"
+        <div className="flex h-full items-center justify-between w-full max-w-5xl mx-auto px-4">
+          <div className="flex lg:flex-1">
+            <Link href="/" className="-m-1.5 p-1.5 block">
+              <img
+                alt="frhnnvs logo light"
+                src="/frhnnvs-logo-dark.png"
+                className="hidden h-8 w-auto dark:block"
+              />
+              <img
+                alt="frhnnvs logo dark"
+                src="/frhnnvs-logo-light.png"
+                className="h-8 w-auto dark:hidden"
+              />
+            </Link>
+          </div>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(true)}
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-muted-foreground"
             >
-              {item.name}
-            </a>
-          ))}
-          <ModeToggle />
+              <span className="sr-only">frhnnvs</span>
+              <Bars3Icon aria-hidden="true" className="h-6 w-6" />
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:items-center lg:gap-x-12">
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-sm/6 font-semibold text-foreground"
+              >
+                {item.name}
+              </a>
+            ))}
+            <ModeToggle />
+          </div>
         </div>
       </nav>
       <Dialog

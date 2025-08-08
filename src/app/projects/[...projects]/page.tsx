@@ -30,8 +30,8 @@ export default function Project() {
   return (
     <div>
       {currProj && (
-        <div className="bg-background px-6 py-32 lg:px-8">
-          <div className="mx-auto max-w-5xl text-base leading-7 text-muted-foreground">
+        <div className="bg-background py-32">
+          <div className="w-full max-w-5xl mx-auto px-4 text-base leading-7 text-muted-foreground">
             <p className="text-base font-semibold leading-7 text-primary">
               Introducing
             </p>
@@ -63,9 +63,8 @@ export default function Project() {
               return (
                 <span
                   key={tech.name}
-                  className={`inline-block px-3 py-1 mt-2 mr-2 text-xs leading-6 rounded-full ${
-                    colorMap[tech.color]
-                  }`}
+                  className={`inline-block px-3 py-1 mt-2 mr-2 text-xs leading-6 rounded-full ${colorMap[tech.color]
+                    }`}
                 >
                   {tech.name}
                 </span>
