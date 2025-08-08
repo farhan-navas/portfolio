@@ -1,6 +1,39 @@
-interface Tech {
+import type { IconType } from "react-icons";
+import { DiJava } from "react-icons/di";
+import {
+  SiAxios,
+  SiClerk,
+  SiCplusplus,
+  SiDart,
+  SiFastapi,
+  SiFirebase,
+  SiFlask,
+  SiFlutter,
+  SiGithubpages,
+  SiNextdotjs,
+  SiOpenai,
+  SiPostgresql,
+  SiPrisma,
+  SiPython,
+  SiReact,
+  SiReactquery,
+  SiShadcnui,
+  SiStripe,
+  SiSwift,
+  SiTailwindcss,
+  SiTrpc,
+  SiTypescript,
+  SiVercel,
+  SiVite,
+  SiZod,
+} from "react-icons/si";
+import { VscAzure } from "react-icons/vsc";
+
+export interface Tech {
+  shortForm: string;
   name: string;
-  color: string;
+  icon?: IconType;
+  color?: string;
 }
 
 interface Project {
@@ -25,34 +58,76 @@ interface Project {
 }
 
 const allTech: Tech[] = [
-  { name: "Next.js", color: "black" },
-  { name: "React", color: "blue" },
-  { name: "TypeScript/JavaScript", color: "yellow" },
-  { name: "Java", color: "yellow" },
-  { name: "JavaFX", color: "green" },
-  { name: "Markbind", color: "blue" },
-  { name: "TailwindCSS", color: "blue" },
-  { name: "tRPC", color: "light_blue" },
-  { name: "Tanstack Query", color: "red" },
-  { name: "Vite", color: "purple" },
-  { name: "Vercel", color: "gray" },
-  { name: "Github Pages", color: "black" },
-  { name: "Clerk/NextAuth", color: "purple" },
-  { name: "Prisma ORM", color: "green" },
-  { name: "PostgreSQL", color: "pink" },
-  { name: "Pinecone", color: "white" },
-  { name: "OpenAI API", color: "green" },
-  { name: "Stripe", color: "purple" },
-  { name: "React Native", color: "blue" },
-  { name: "Python", color: "green" },
-  { name: "FastAPI", color: "blue" },
-  { name: "C++", color: "blue" },
-  { name: "Firebase Firestore", color: "orange" },
-  { name: "Firebase Authentication", color: "green" },
+  { shortForm: "nextjs", name: "Next.js", icon: SiNextdotjs, color: "#000000" },
+  { shortForm: "react", name: "React", icon: SiReact, color: "#61DAFB" },
+  { shortForm: "ts", name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { shortForm: "java", name: "Java", icon: DiJava, color: "#007396" },
+  { shortForm: "javafx", name: "JavaFX" /* color: "#5382A1" */ },
+  { shortForm: "mkbind", name: "Markbind" },
+  {
+    shortForm: "tailwind",
+    name: "TailwindCSS",
+    icon: SiTailwindcss,
+    color: "#06B6D4",
+  },
+  { shortForm: "trpc", name: "tRPC", icon: SiTrpc, color: "#398CCB" },
+  {
+    shortForm: "ts-query",
+    name: "Tanstack Query",
+    icon: SiReactquery,
+    color: "#FF4154",
+  },
+  { shortForm: "vite", name: "Vite", icon: SiVite, color: "#646CFF" },
+  { shortForm: "vercel", name: "Vercel", icon: SiVercel, color: "#000000" },
+  {
+    shortForm: "gh-pages",
+    name: "Github Pages",
+    icon: SiGithubpages,
+    color: "#181717",
+  },
+  {
+    shortForm: "clerk",
+    name: "Clerk",
+    icon: SiClerk,
+    color: "#6C47FF",
+  },
+  { shortForm: "prisma", name: "Prisma ORM", icon: SiPrisma, color: "#0C344B" },
+  {
+    shortForm: "psql",
+    name: "PostgreSQL",
+    icon: SiPostgresql,
+    color: "#336791",
+  },
+  { shortForm: "pinecone", name: "Pinecone" },
+  { shortForm: "openai", name: "OpenAI API", icon: SiOpenai, color: "#10A37F" },
+  { shortForm: "stripe", name: "Stripe", icon: SiStripe, color: "#635BFF" },
+  { shortForm: "python", name: "Python", icon: SiPython, color: "#3776AB" },
+  { shortForm: "fastapi", name: "FastAPI", icon: SiFastapi, color: "#05998B" },
+  { shortForm: "c++", name: "C++", icon: SiCplusplus, color: "#00599C" },
+  {
+    shortForm: "firebase",
+    name: "Firebase",
+    icon: SiFirebase,
+    color: "#FFCA28",
+  },
+  { shortForm: "flutter", name: "Flutter", icon: SiFlutter, color: "#02569B" },
+  { shortForm: "dart", name: "Dart", icon: SiDart, color: "#0175C2" },
+  { shortForm: "swift", name: "Swift", icon: SiSwift, color: "#F05138" },
+  { shortForm: "shadcn", name: "Shadcn", icon: SiShadcnui, color: "#0EA5E9" },
+  { shortForm: "zod", name: "Zod", icon: SiZod, color: "#3E67B1" },
+  { shortForm: "axios", name: "Axios", icon: SiAxios, color: "#5A29E4" },
+  {
+    shortForm: "azure",
+    name: "Azure AI SDK",
+    icon: VscAzure,
+    color: "#0078D4",
+  },
+  { shortForm: "sm-kernel", name: "Semantic Kernel" },
+  { shortForm: "flask", name: "Flask", icon: SiFlask, color: "#000000" },
 ];
 
-const getTechStack = (names: string[]): Tech[] => {
-  return allTech.filter((tech) => names.includes(tech.name));
+const getTechStack = (shrortForms: string[]): Tech[] => {
+  return allTech.filter((tech) => shrortForms.includes(tech.shortForm));
 };
 
 export const projects: Project[] = [
@@ -90,16 +165,7 @@ export const projects: Project[] = [
       "Planned: Calendar + Screen Time + HealthKit integrations",
       "Planned: Local ‘Memories’ store and SharedPreferences persistence",
     ],
-    stack: getTechStack([
-      "Flutter",
-      "Dart",
-      "Swift (App Intents)",
-      "Xcode / iOS",
-      "SharedPreferences",
-      "Screen Time API",
-      "HealthKit",
-      "Calendar",
-    ]),
+    stack: getTechStack(["flutter", "dart", "swift"]),
   },
   {
     id: 2,
@@ -107,7 +173,7 @@ export const projects: Project[] = [
     subtitle: "An AI-driven relationship wellness companion",
     href: "/projects/wally",
     slug: "wally",
-    date: "2024/2025",
+    date: "2025",
     type: "Full-stack",
     description: `Wally is a relationship wellness app that helps people communicate better with their partners, 
       family and colleagues offline. Currently in beta and is only available on the web.`,
@@ -124,7 +190,7 @@ export const projects: Project[] = [
     secondParagraph: `This is the first time I have worked on a comprehensive full-stack project like this. Before starting on the project, 
       I had to spend a lot of time learning what was the best way to structure a full-stack like this and how to make it 
       scalable at the same time. I had to reasearch online and find out the best conventions and practices to follow, 
-      and I am glad that I have done so as I definitely feel like I have learned a lot :)`,
+      and I have definitely feel like I have learned a lot through the process :)`,
     thirdParagraph: `I plan to continue working on Wally and keep adding more features to it. I hope to make Wally available on mobile 
       devices once we have successfully tested it on the web and distribute it on the Android Play Store/Apple App Store.`,
     features: [
@@ -137,20 +203,19 @@ export const projects: Project[] = [
       "Stripe payment process integration",
     ],
     stack: getTechStack([
-      "Next.js",
-      "React",
-      "TypeScript/JavaScript",
-      "TailwindCSS",
-      "tRPC",
-      "Tanstack Query",
-      "Vercel",
-      "Clerk/NextAuth",
-      "Prisma ORM",
-      "PostgreSQL",
-      "Pinecone",
-      "OpenAI API",
-      "Stripe",
-      "React Native",
+      "nextjs",
+      "react",
+      "ts",
+      "tailwind",
+      "trpc",
+      "ts-query",
+      "vercel",
+      "clerk",
+      "prisma",
+      "psql",
+      "pinecone",
+      "openai",
+      "stripe",
     ]),
   },
   {
@@ -188,10 +253,18 @@ export const projects: Project[] = [
       "Simple deployment split: /backend (FastAPI) and /frontend (React)",
     ],
     stack: getTechStack([
-      // Frontend
-      "React", "TypeScript", "Vite (SWC)", "TailwindCSS", "shadcn/ui", "React Router", "Zod", "Axios",
-      // Backend
-      "Python", "FastAPI", "Azure AI Foundry", "Semantic Kernel", "OpenAI API"
+      "react",
+      "ts",
+      "vite",
+      "tailwind",
+      "shadcn",
+      "zod",
+      "axios",
+      "python",
+      "fastapi",
+      "azure",
+      "sm-kernel",
+      "openai",
     ]),
   },
   {
@@ -224,7 +297,7 @@ export const projects: Project[] = [
       "Saving tasks to disk, (tasks are loaded when the app is started)",
       "Bye command to easily exit the app",
     ],
-    stack: getTechStack(["Java", "JavaFX", "Github Pages"]),
+    stack: getTechStack(["java", "javafx", "gh-pages"]),
   },
   {
     id: 5,
@@ -236,8 +309,7 @@ export const projects: Project[] = [
     type: "AI Agent",
     description: `The Connect 4 Agent is a simple AI Agent that can play the game Connect 4 that I made for the NUS CS2109S module. 
       The agent uses the minimax algorithm with alpha-beta pruning to make decisions.`,
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    imageUrl: "/projects/connect-4/home.png",
     imageAlt: "Connect 4 Agent in play",
     githubUrl: "https://github.com/farhan-navas/connect-4",
     firstParagraph: `The Connect 4 Agent is a simple AI Agent that can play the game Connect 4. This was a project that I was 
@@ -260,7 +332,7 @@ export const projects: Project[] = [
       "Transposition table to store previously computed positions",
       "12-move lookup table to store the best move for the first 12 moves",
     ],
-    stack: getTechStack(["Python", "C++"]),
+    stack: getTechStack(["python", "c++"]),
   },
   {
     id: 6,
@@ -294,14 +366,13 @@ export const projects: Project[] = [
       "View the bidding history of each group",
     ],
     stack: getTechStack([
-      "Next.js",
-      "React",
-      "TypeScript/JavaScript",
-      "TailwindCSS",
-      "Tanstack Query",
-      "Vercel",
-      "Firebase Firestore",
-      "Firebase Authentication",
+      "nextjs",
+      "react",
+      "ts",
+      "tailwind",
+      "ts-query",
+      "vercel",
+      "firebase",
     ]),
   },
 
@@ -312,11 +383,10 @@ export const projects: Project[] = [
     href: "/projects/arima-lstm-sentiment-analysis",
     slug: "arima-lstm-sentiment-analysis",
     date: "2023/2024",
-    type: "Machine Learning/Backend",
+    type: "Machine Learning • Backend",
     description: `This is a simple model that predicts the price of ETH and Impermanent Loss. Made this together with my friends 
       for the NUS Fintech Summit 2024.`,
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    imageUrl: "/projects/sentiment-analysis/home.png",
     imageAlt: "ARIMA-LSTM Sentiment Analysis Backend in Action",
     githubUrl: "https://github.com/farhan-navas/Fintech-Hacka",
     firstParagraph: `This project is a simple ML model that was trained on a Crypto News Dataset. The model makes an API call to a crypto news
@@ -334,6 +404,6 @@ export const projects: Project[] = [
       "Predict the price of ETH and Impermanent Loss",
       "Display predictions on frontend",
     ],
-    stack: getTechStack(["Python", "Flask"]),
+    stack: getTechStack(["python", "flask"]),
   },
 ];

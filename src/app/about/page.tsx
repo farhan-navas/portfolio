@@ -53,6 +53,11 @@ const languages = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/trpc/trpc-original.svg",
   },
   {
+    label: "Axios",
+    value:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/axios/axios-plain.svg",
+  },
+  {
     label: "Prisma",
     value:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg",
@@ -107,11 +112,41 @@ const languages = [
     value:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
   },
+  {
+    label: "Vite",
+    value:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vite/vite-original.svg",
+  },
+  {
+    label: "FastAPI",
+    value:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
+  },
+  {
+    label: "Flutter",
+    value:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg",
+  },
+  {
+    label: "Dart",
+    value:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg",
+  },
+  {
+    label: "Swift",
+    value:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg",
+  },
+  {
+    label: "Azure",
+    value:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg",
+  },
 ];
 
 export default function About() {
   return (
-    <div>
+    <div className="w-full max-w-5xl mx-auto px-4">
       <main className="relative isolate">
         {/* Background */}
         <div
@@ -128,105 +163,95 @@ export default function About() {
         </div>
 
         {/* Header section */}
-        <div className="px-6 pt-14 lg:px-8">
-          <div className="mx-auto max-w-2xl pt-24 text-center sm:pt-40">
-            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-              About
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              An aspiring Software Engineer, that aims to innovate and inspire
-            </p>
-          </div>
+        <div className="mx-auto text-center pt-24 sm:pt-32">
+          <h2 className="text-5xl font-bold tracking-tight text-maintext">
+            About
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            An aspiring Software Engineer, that aims to innovate and inspire
+          </p>
         </div>
 
         {/* Content section */}
-        <div className="mx-auto mt-20 max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <div className="grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-muted-foreground lg:max-w-none lg:grid-cols-2">
-              <div>
-                <p>
-                  Hi there, I&apos;m Farhan! An aspiring Full-Stack Engineer
-                  based in Singapore. Currently a sophomore at the National
-                  University of Singapore, majoring in Computer Science.
-                  I&apos;m passionate about building full-stack web
-                  applications, and am always looking for opportunities to learn
-                  and grow as a developer.
-                </p>
-                <br />
-                <h3 className="font-semibold text-lg">
-                  Things I have been a part of in NUS:
-                </h3>
-                <ul className="list-disc list-inside mt-4">
-                  <li>
-                    <strong>Vice Head</strong>, Raffles Hall Developers
-                  </li>
-                  <li>
-                    <strong>Captain</strong>, Raffles Hall Ultimate Frisbee
-                  </li>
-                  <li>
-                    <strong>Software Engineer</strong>, NUS Fintech Society
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p>
-                  I have also had relevant work experience in the tech industry,
-                  and have worked on a variety of personal projects that
-                  interest me. My most recent project is Wally AI, a
-                  relationship wellness app powered by AI-driven language models
-                  to help users communicate better offline!{" "}
-                  <Link
-                    href="/projects"
-                    className="font-semibold text-primary"
-                  >
-                    Check out my projects!
-                    <span aria-hidden="true">&rarr;</span>
-                  </Link>
-                </p>
-                <br />
-                <h3 className="font-semibold text-lg">
-                  Relevant work experience I have had:
-                </h3>
-                <ul className="list-disc list-inside mt-4">
-                  <li>
-                    <strong>Java Backend Developer</strong>, Optimum Solutions
-                  </li>
-                  <li>
-                    <strong>Research Consultant</strong>, WorldQuant
-                  </li>
-                  <li>
-                    <strong>Field Technician & Digital Marketing Intern</strong>
-                    , Fredrik Marine
-                  </li>
-                </ul>
-              </div>
+        <div className="mt-12">
+          <div className="grid grid-cols-1 gap-8 text-base leading-7 text-muted-foreground lg:grid-cols-2">
+            {/* Left Section */}
+            <div>
+              <p>
+                Hi there, I&apos;m Farhan! An aspiring Full-Stack Engineer based
+                in Singapore. Currently a penultimate Computer Science student
+                at NUS. I&apos;m passionate about building full-stack web
+                applications, and am always looking for opportunities to learn
+                and grow!
+              </p>
+              <br />
+              <h3 className="font-semibold text-lg text-maintext">
+                Things I have been a part of in NUS:
+              </h3>
+              <ul className="list-disc list-inside mt-2">
+                <li>
+                  <strong>Vice Head</strong>, Raffles Hall Developers
+                </li>
+                <li>
+                  <strong>Captain</strong>, Raffles Hall Ultimate Frisbee
+                </li>
+                <li>
+                  <strong>Software Engineer</strong>, NUS Fintech Society
+                </li>
+              </ul>
+            </div>
+
+            {/* Right Section */}
+            <div>
+              <p>
+                I have had relevant work experience in the tech industry, and
+                worked on a variety of personal projects that interest me. My
+                most recent project is Wally, a relationship wellness assistant
+                to help users communicate better offline!{" "}
+                <Link href="/projects" className="text-maintext">
+                  Check out my projects! <span aria-hidden="true">&rarr;</span>
+                </Link>
+              </p>
+              <br />
+              <h3 className="font-semibold text-lg text-maintext">
+                Relevant work experience I have had:
+              </h3>
+              <ul className="list-disc list-inside mt-2">
+                <li>
+                  <strong>Full Stack Developer</strong>, Accenture
+                </li>
+                <li>
+                  <strong>Java Backend Developer</strong>, Optimum Solutions
+                </li>
+                <li>
+                  <strong>Research Consultant</strong>, WorldQuant
+                </li>
+              </ul>
             </div>
           </div>
 
           {/* Technologies section */}
           <div>
-            <div className="px-6">
-              <div className="mx-auto max-w-2xl pt-12 text-center sm:pt-16">
-                <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
-                  Technology i know.
-                </h2>
-              </div>
+            <div className="mx-auto pt-12 text-center sm:pt-16">
+              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Technology i know.
+              </h2>
             </div>
-            <dl className="mt-8 grid grid-cols-1 gap-x-8 gap-y-8 sm:mt-20 sm:grid-cols-6 sm:gap-y-12 lg:mt-14 lg:grid-cols-12">
+            <dl className="mt-8 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-x-8 gap-y-10 sm:mt-20 lg:mt-14 place-items-center">
               {languages.map((stat, statIdx) => (
                 <div
                   key={statIdx}
-                  className="flex flex-col-reverse gap-y-3 border-l border-border pl-6"
+                  className="flex w-24 sm:w-28 flex-col-reverse items-center gap-y-2"
                 >
-                  <dt className="text-base text-center font-semibold leading-7 text-foreground">
+                  <dt className="text-xs sm:text-sm text-center font-medium leading-5 text-foreground">
                     {stat.label}
                   </dt>
                   <Image
-                    className="text-3xl font-semibold tracking-tight text-muted-foreground"
+                    className="relative h-8 w-8 text-center"
                     alt={stat.label}
                     src={stat.value}
-                    width={79}
-                    height={24}
+                    width={60}
+                    height={20}
                   />
                 </div>
               ))}
@@ -248,73 +273,68 @@ export default function About() {
               }}
             />
           </div>
-          <div className="overflow-hidden">
-            <div className="mx-auto max-w-7xl px-6 pt-12 sm:pt-14 lg:px-8 lg:pt-16">
-              <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-                <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-                  <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
-                    Things I like to do.
-                  </h2>
-                  <p className="relative mt-6 text-lg leading-8 text-muted-foreground sm:max-w-md lg:max-w-none">
-                    When I am <strong>not</strong> sitting in front of a
-                    monitor, I enjoy spending time on a wide variety of hobbies!
-                    Personally, I would say I am a relationship-oriented person
-                    and love spending time with close friends and family. My
-                    other hobbies are kind of all over the place, but here are a
-                    few things I enjoy most:
-                  </p>
-                  <ul className="list-disc list-inside mt-4 leading-7 text-muted-foreground">
-                    <li>Playing ultimate frisbee with my team, RHU</li>
-                    <li>
-                      Climbing fake rocks and hoping I don&apos;t break
-                      something again.. (MCL tear oops)
-                    </li>
-                    <li>Hitting the gym for a workout</li>
-                    <li>
-                      Playing chess, I&apos;m not that good though LOL I just
-                      like doing puzzles
-                    </li>
-                    <li>
-                      Pushing my Brawl Stars rank and questioning my life
-                      choices when I lose 😵‍💫
-                    </li>
-                  </ul>
+          <div className="mx-auto gap-x-14 lg:mx-0 lg:flex lg:items-center">
+            <div className="max-w-full lg:shrink-0 xl:max-w-2xl">
+              <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Things I like to do.
+              </h2>
+              <p className="relative mt-6 text-lg leading-8 text-muted-foreground sm:max-w-sm lg:max-w-lg">
+                When I am <strong>not</strong> sitting in front of a monitor, I
+                enjoy spending time on a wide variety of hobbies! Personally, I
+                would say I am a relationship-oriented person and love spending
+                time with close friends and family. My other hobbies are kind of
+                all over the place, but here are a few things I enjoy most:
+              </p>
+              <ul className="list-disc list-inside mt-4 leading-7 text-muted-foreground">
+                <li>Playing ultimate frisbee with my team, RHU</li>
+                <li>
+                  Climbing fake rocks and hoping I don&apos;t break something
+                  again.. (MCL tear oops)
+                </li>
+                <li>Hitting the gym for a workout</li>
+                <li>
+                  Playing chess, I&apos;m not that good though LOL I just like
+                  doing puzzles
+                </li>
+                <li>
+                  Pushing my Brawl Stars rank and questioning my life choices
+                  when I lose 😵‍💫
+                </li>
+              </ul>
+            </div>
+            <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
+              <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+                <div className="relative">
+                  <Image
+                    src="/about/ulti.jpg"
+                    alt="Ultimate Frisbee"
+                    className="aspect-[2/3] w-full rounded-xl bg-muted/50 object-cover shadow-lg"
+                    width={396}
+                    height={528}
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-border" />
                 </div>
-                <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
-                  <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
-                    <div className="relative">
-                      <Image
-                        src="/about/ulti.jpg"
-                        alt="Ultimate Frisbee"
-                        className="aspect-[2/3] w-full rounded-xl bg-muted/50 object-cover shadow-lg"
-                        width={396}
-                        height={528}
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-border" />
-                    </div>
-                  </div>
-                  <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-                    <div className="relative">
-                      <Image
-                        src="/about/climbing.png"
-                        alt=""
-                        className="aspect-[2/3] w-full rounded-xl bg-muted/50 object-cover shadow-lg"
-                        width={396}
-                        height={528}
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-border" />
-                    </div>
-                    <div className="relative">
-                      <Image
-                        src="/about/brawl_stars.png"
-                        alt=""
-                        className="aspect-[2/3] w-full rounded-xl bg-muted/50 object-cover shadow-lg"
-                        width={396}
-                        height={528}
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-border" />
-                    </div>
-                  </div>
+              </div>
+              <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
+                <div className="relative">
+                  <Image
+                    src="/about/climbing.png"
+                    alt=""
+                    className="aspect-[2/3] w-full rounded-xl bg-muted/50 object-cover shadow-lg"
+                    width={396}
+                    height={528}
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-border" />
+                </div>
+                <div className="relative">
+                  <Image
+                    src="/about/brawl_stars.png"
+                    alt=""
+                    className="aspect-[2/3] w-full rounded-xl bg-muted/50 object-cover shadow-lg"
+                    width={396}
+                    height={528}
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-border" />
                 </div>
               </div>
             </div>
@@ -323,32 +343,30 @@ export default function About() {
 
         {/* CTA section */}
         <div className="relative isolate -z-10 mt-12 sm:mt-16">
-          <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-muted/50 px-6 py-16 ring-1 ring-border sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
-              <Image
-                className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
-                src="/about/contact.jpg"
-                alt=""
-                width={600}
-                height={384}
-              />
-              <div className="w-full flex-auto">
-                <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                  Get to know me!
-                </h2>
-                <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                  I am always looking for new opportunities to work on new apps
-                  or a software engineering internship. If you think I could be
-                  a good fit for your team, feel free to contact me here!
-                </p>
-                <div className="mt-10 flex">
-                  <Link
-                    href="/projects"
-                    className="text-lg font-semibold leading-6 text-primary"
-                  >
-                    Contact me here!<span aria-hidden="true">&rarr;</span>
-                  </Link>
-                </div>
+          <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-muted/50 px-6 py-16 ring-1 ring-border sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
+            <Image
+              className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
+              src="/about/contact.jpg"
+              alt=""
+              width={600}
+              height={384}
+            />
+            <div className="w-full flex-auto">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Get to know me!
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                I am always looking for new opportunities to work on new apps or
+                a software engineering internship. If you think I could be a
+                good fit for your team, feel free to contact me here!
+              </p>
+              <div className="mt-10 flex">
+                <Link
+                  href="/projects"
+                  className="text-lg font-semibold leading-6 text-primary"
+                >
+                  Contact me here!<span aria-hidden="true">&rarr;</span>
+                </Link>
               </div>
             </div>
           </div>

@@ -8,20 +8,7 @@ import {
   InformationCircleIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
-
-const colorMap: Record<string, string> = {
-  red: "text-destructive-foreground bg-destructive",
-  light_blue: "text-primary-foreground bg-primary",
-  blue: "text-primary-foreground bg-primary",
-  green: "text-white bg-green-600",
-  yellow: "text-white bg-yellow-500",
-  orange: "text-white bg-orange-500",
-  purple: "text-white bg-purple-500",
-  pink: "text-white bg-pink-500",
-  gray: "text-muted-foreground bg-muted",
-  black: "text-background bg-foreground",
-  white: "text-foreground bg-background",
-};
+import StackPills from "@/app/_components/stack-pills";
 
 export default function Project() {
   const params = useParams().projects?.[0];
@@ -29,12 +16,25 @@ export default function Project() {
 
   return (
     <div>
+      {!currProj && (
+        <div className="py-32">
+          <div className="w-full max-w-5xl mx-auto px-4">
+            <h1 className="text-2xl font-semibold text-foreground">
+              Project not found
+            </h1>
+            <p className="mt-2 text-muted-foreground">
+              Check the URL or browse all projects.
+            </p>
+            <Link href="/projects" className="mt-6 inline-block underline">
+              Back to Projects
+            </Link>
+          </div>
+        </div>
+      )}
       {currProj && (
         <div className="bg-background py-32">
           <div className="w-full max-w-5xl mx-auto px-4 text-base leading-7 text-muted-foreground">
-            <p className="text-base font-semibold leading-7 text-primary">
-              Introducing
-            </p>
+            <p className="text-maintext font-semibold leading-7">Introducing</p>
             <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               {currProj.title}
             </h1>
@@ -43,40 +43,34 @@ export default function Project() {
               <div className="flex mt-4 gap-x-2">
                 <Link
                   href={currProj.appUrl}
-                  className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md bg-maintext px-3.5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-maintext/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 >
                   Check out the app!
                 </Link>
 
                 <Link
                   href={currProj.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-md bg-secondary px-3.5 py-2.5 text-sm font-semibold text-secondary-foreground shadow-sm hover:bg-secondary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
                 >
                   Repo link
                 </Link>
               </div>
             )}
-            <h2 className="mt-8 text-2xl font-semibold leading-7 text-foreground">
+            <h2 className="mt-8 mb-4 text-2xl font-semibold leading-7 text-foreground">
               Stack
             </h2>
-            {currProj.stack?.map((tech) => {
-              return (
-                <span
-                  key={tech.name}
-                  className={`inline-block px-3 py-1 mt-2 mr-2 text-xs leading-6 rounded-full ${colorMap[tech.color]
-                    }`}
-                >
-                  {tech.name}
-                </span>
-              );
-            })}
-            <div className="mt-10">
+            <StackPills stack={currProj.stack} />
+            <div className="mt-8">
               <p>{currProj.secondParagraph}</p>
               <figure className="mt-8">
                 <Image
                   className="aspect-video rounded-xl object-contain"
                   src={currProj.imageUrl}
-                  alt=""
+                  alt={currProj.imageAlt}
                   width={1310}
                   height={873}
                 />
