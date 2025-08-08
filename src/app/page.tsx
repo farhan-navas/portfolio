@@ -62,17 +62,14 @@ export default function HomePage() {
 
           {/* right column */}
           <div className="flex flex-col items-center justify-center md:w-1/2 mt-12 md:mt-0 space-y-8">
-            <p className="text-muted-foreground lg:pt-8">
-              I deliver high-performance web and mobile solutions—whether
-              transforming legacy systems into modular platforms or rolling out
-              AI-driven chatbots. I blend precise engineering with creative
-              innovation to build scalable, user-friendly experiences
+            <p className="text-muted-foreground lg:pt-8 xl:pt-12">
+              I love developing performant web and mobile applications! I fix
+              legacy messes and incorporate AI wherever it provides real value.
+              From design to deployment, I care about the details, giving you
+              features that arrive polished and reliable.
             </p>
-
             <div className="flex space-x-4">
-              <Button
-                className="bg-maintext hover:bg-white hover:text-maintext"
-              >
+              <Button className="bg-maintext hover:bg-white hover:text-maintext">
                 <a
                   href={`mailto:frhnnvs@gmail.com?subject=${encodeURIComponent(
                     "Hey Farhan!"
