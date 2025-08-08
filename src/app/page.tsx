@@ -9,18 +9,20 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { MapPin, PlusCircle, Code, Calendar } from "lucide-react";
+import { MapPin, PlusCircle, Code, Calendar, School } from "lucide-react";
 
 import { useState } from "react";
 import { projects } from "./projects/projects";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
   const [api, setApi] = useState<CarouselApi>();
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <main className="container mx-auto px-6 py-16 lg:py-32">
+      <main className="container mx-auto px-6 py-8 lg:py-16">
         {/* hero */}
         <section className="flex flex-col md:flex-row justify-between items-stretch w-full max-w-5xl mx-auto px-4 py-12">
           {/* left column */}
@@ -43,6 +45,10 @@ export default function HomePage() {
                 <span>23 Years Old</span>
               </li>
               <li className="flex items-center space-x-2">
+                <School className="w-5 h-5 text-maintext" />
+                <span>Penultimate Year, NUS Computer Science</span>
+              </li>
+              <li className="flex items-center space-x-2">
                 <Code className="w-5 h-5 text-maintext" />
                 <span>Full Stack Engineer at Accenture</span>
               </li>
@@ -55,25 +61,31 @@ export default function HomePage() {
 
           {/* right column */}
           <div className="flex flex-col items-center justify-center md:w-1/2 mt-12 md:mt-0 space-y-8">
-            <p className="text-base">
-              As a dedicated developer based in the heart of Singapore, I bring
-              precision and creative innovation to every project. I specialize
-              in creating robust, scalable web applications that combine
-              cutting-edge technology with intuitive user experiences.
+            <p className="text-muted-foreground">
+              I deliver high-performance web and mobile solutions—whether
+              transforming legacy systems into modular platforms or rolling out
+              AI-driven chatbots. I blend precise engineering with creative
+              innovation to build scalable, user-friendly experiences
             </p>
 
             <div className="flex space-x-4">
-              <Button className="bg-maintext hover:bg-white hover:text-maintext">
+              <Button
+                onClick={() => router.push("/contact")}
+                className="bg-maintext hover:bg-white hover:text-maintext"
+              >
                 Get in Touch
               </Button>
-              <Button className="bg-white text-maintext hover:bg-maintext hover:text-white">
+              <Button
+                onClick={() => router.push("/projects")}
+                className="bg-white text-maintext hover:bg-maintext hover:text-white"
+              >
                 View Projects
               </Button>
             </div>
           </div>
         </section>
 
-        <div className="mt-16">
+        <div>
           <h2 className="text-lg font-semibold leading-tight">Projects</h2>
           <Carousel
             opts={{ align: "start" }}
@@ -95,7 +107,7 @@ export default function HomePage() {
                           fill
                           className="object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent" />
                       </div>
                       <div className="absolute inset-0 bg-black/30 opacity-0 transition-opacity group-hover:opacity-50" />
                       <div className="absolute top-4 left-4">
