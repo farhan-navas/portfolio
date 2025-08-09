@@ -6,6 +6,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import { ModeToggle } from "./mode-toggle";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -16,6 +18,9 @@ const navigation = [
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header className="absolute inset-x-0 top-0 z-50 h-16">
@@ -48,15 +53,31 @@ export default function NavBar() {
               <Bars3Icon aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:items-center lg:gap-x-12">
+          <div className="hidden lg:flex lg:items-center lg:gap-x-6">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm/6 font-semibold text-foreground"
+                aria-current={isActive(item.href) ? "page" : undefined}
+                className={clsx(
+                  // base
+                  "relative rounded-2xl px-4 py-2 text-sm font-semibold transition",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/60",
+
+                  // hover style
+                  "hover:bg-card hover:shadow-sm hover:-translate-y-[1px]",
+
+                  // inactive text
+                  !isActive(item.href) &&
+                    "text-muted-foreground hover:text-foreground",
+
+                  // active pill (permanent)
+                  isActive(item.href) &&
+                    "bg-card ring-1 ring-border shadow-sm text-foreground"
+                )}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <ModeToggle />
           </div>
