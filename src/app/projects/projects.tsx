@@ -1,6 +1,39 @@
-interface Tech {
+import type { IconType } from "react-icons";
+import { DiJava } from "react-icons/di";
+import {
+  SiAxios,
+  SiClerk,
+  SiCplusplus,
+  SiDart,
+  SiFastapi,
+  SiFirebase,
+  SiFlask,
+  SiFlutter,
+  SiGithubpages,
+  SiNextdotjs,
+  SiOpenai,
+  SiPostgresql,
+  SiPrisma,
+  SiPython,
+  SiReact,
+  SiReactquery,
+  SiShadcnui,
+  SiStripe,
+  SiSwift,
+  SiTailwindcss,
+  SiTrpc,
+  SiTypescript,
+  SiVercel,
+  SiVite,
+  SiZod,
+} from "react-icons/si";
+import { VscAzure } from "react-icons/vsc";
+
+export interface Tech {
+  shortForm: string;
   name: string;
-  color: string;
+  icon?: IconType;
+  color?: string;
 }
 
 interface Project {
@@ -25,43 +58,122 @@ interface Project {
 }
 
 const allTech: Tech[] = [
-  { name: "Next.js", color: "black" },
-  { name: "React", color: "blue" },
-  { name: "TypeScript/JavaScript", color: "yellow" },
-  { name: "Java", color: "yellow" },
-  { name: "JavaFX", color: "green" },
-  { name: "Markbind", color: "blue" },
-  { name: "TailwindCSS", color: "blue" },
-  { name: "tRPC", color: "light_blue" },
-  { name: "Tanstack Query", color: "red" },
-  { name: "Vite", color: "purple" },
-  { name: "Vercel", color: "gray" },
-  { name: "Github Pages", color: "black" },
-  { name: "Clerk/NextAuth", color: "purple" },
-  { name: "Prisma ORM", color: "green" },
-  { name: "PostgreSQL", color: "pink" },
-  { name: "Pinecone", color: "white" },
-  { name: "OpenAI API", color: "green" },
-  { name: "Stripe", color: "purple" },
-  { name: "React Native", color: "blue" },
-  { name: "Python", color: "green" },
-  { name: "C++", color: "blue" },
-  { name: "Firebase Firestore", color: "orange" },
-  { name: "Firebase Authentication", color: "green" },
+  { shortForm: "nextjs", name: "Next.js", icon: SiNextdotjs, color: "#000000" },
+  { shortForm: "react", name: "React", icon: SiReact, color: "#61DAFB" },
+  { shortForm: "ts", name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { shortForm: "java", name: "Java", icon: DiJava, color: "#007396" },
+  { shortForm: "javafx", name: "JavaFX" /* color: "#5382A1" */ },
+  { shortForm: "mkbind", name: "Markbind" },
+  {
+    shortForm: "tailwind",
+    name: "TailwindCSS",
+    icon: SiTailwindcss,
+    color: "#06B6D4",
+  },
+  { shortForm: "trpc", name: "tRPC", icon: SiTrpc, color: "#398CCB" },
+  {
+    shortForm: "ts-query",
+    name: "Tanstack Query",
+    icon: SiReactquery,
+    color: "#FF4154",
+  },
+  { shortForm: "vite", name: "Vite", icon: SiVite, color: "#646CFF" },
+  { shortForm: "vercel", name: "Vercel", icon: SiVercel, color: "#000000" },
+  {
+    shortForm: "gh-pages",
+    name: "Github Pages",
+    icon: SiGithubpages,
+    color: "#181717",
+  },
+  {
+    shortForm: "clerk",
+    name: "Clerk",
+    icon: SiClerk,
+    color: "#6C47FF",
+  },
+  { shortForm: "prisma", name: "Prisma ORM", icon: SiPrisma, color: "#0C344B" },
+  {
+    shortForm: "psql",
+    name: "PostgreSQL",
+    icon: SiPostgresql,
+    color: "#336791",
+  },
+  { shortForm: "pinecone", name: "Pinecone" },
+  { shortForm: "openai", name: "OpenAI API", icon: SiOpenai, color: "#10A37F" },
+  { shortForm: "stripe", name: "Stripe", icon: SiStripe, color: "#635BFF" },
+  { shortForm: "python", name: "Python", icon: SiPython, color: "#3776AB" },
+  { shortForm: "fastapi", name: "FastAPI", icon: SiFastapi, color: "#05998B" },
+  { shortForm: "c++", name: "C++", icon: SiCplusplus, color: "#00599C" },
+  {
+    shortForm: "firebase",
+    name: "Firebase",
+    icon: SiFirebase,
+    color: "#FFCA28",
+  },
+  { shortForm: "flutter", name: "Flutter", icon: SiFlutter, color: "#02569B" },
+  { shortForm: "dart", name: "Dart", icon: SiDart, color: "#0175C2" },
+  { shortForm: "swift", name: "Swift", icon: SiSwift, color: "#F05138" },
+  { shortForm: "shadcn", name: "Shadcn", icon: SiShadcnui, color: "#0EA5E9" },
+  { shortForm: "zod", name: "Zod", icon: SiZod, color: "#3E67B1" },
+  { shortForm: "axios", name: "Axios", icon: SiAxios, color: "#5A29E4" },
+  {
+    shortForm: "azure",
+    name: "Azure AI SDK",
+    icon: VscAzure,
+    color: "#0078D4",
+  },
+  { shortForm: "sm-kernel", name: "Semantic Kernel" },
+  { shortForm: "flask", name: "Flask", icon: SiFlask, color: "#000000" },
 ];
 
-const getTechStack = (names: string[]): Tech[] => {
-  return allTech.filter((tech) => names.includes(tech.name));
+const getTechStack = (shrortForms: string[]): Tech[] => {
+  return allTech.filter((tech) => shrortForms.includes(tech.shortForm));
 };
 
 export const projects: Project[] = [
   {
     id: 1,
+    title: "Monday",
+    subtitle: "My personal iOS butler, built with Flutter",
+    href: "/projects/monday",
+    slug: "monday",
+    date: "2025",
+    type: "Mobile (Flutter, iOS-first)",
+    description: `An opinionated personal assistant app focused on day planning and digital well-being.
+    Monday starts as a UI-first prototype (Flutter) with iOS-leaning features like App Intents,
+    and will gradually add integrations for Calendar, Screen Time, and Health.`,
+    // homeImageUrl: "/projects/monday/monday-home.png",
+    imageUrl: "/projects/monday/monday-home.png",
+    imageAlt: "Monday app — dashboard and task views",
+    githubUrl: "https://github.com/farhan-navas/monday",
+    // no appUrl yet => button won't render
+    firstParagraph: `Monday is my take on a personal iOS butler. I’m using Flutter to move fast on UI and iterate on
+    a clean UX before wiring real integrations. The goal is a daily companion that helps me plan,
+    block distractions, and surface the right info at the right time.`,
+    secondParagraph: `I’m building the core screens first — Weather, Tasks, Screen Time lists, Health and Sleep dashboards,
+    plus Settings/Pricing — then layering in iOS-native features via Swift App Intents. Calendar,
+    Screen Time, and HealthKit integrations are on the roadmap, with local data via SharedPreferences.`,
+    thirdParagraph: `Once the UX feels right, I’ll add the brains: Calendar automation, Siri shortcuts/intents,
+    and selective AI assistance (kept local where sensible). If needed, I may add a small .NET backend later.`,
+    features: [
+      "Flutter UI for Weather, Tasks, Health, Sleep, and Settings",
+      "Task list UX: add, multi-delete, and swipe gestures",
+      "Screen-blocking list UI (time-limit / time-of-day profiles)",
+      "Image-first card design with rounded corners and subtle shadowing",
+      "Dark mode friendly design",
+      "iOS App Intent: OpenStatusReport (Swift)",
+      "Planned: Calendar + Screen Time + HealthKit integrations",
+      "Planned: Local ‘Memories’ store and SharedPreferences persistence",
+    ],
+    stack: getTechStack(["flutter", "dart", "swift"]),
+  },
+  {
+    id: 2,
     title: "Wally 1.0",
     subtitle: "An AI-driven relationship wellness companion",
     href: "/projects/wally",
     slug: "wally",
-    date: "2024/2025",
+    date: "2025",
     type: "Full-stack",
     description: `Wally is a relationship wellness app that helps people communicate better with their partners, 
       family and colleagues offline. Currently in beta and is only available on the web.`,
@@ -78,7 +190,7 @@ export const projects: Project[] = [
     secondParagraph: `This is the first time I have worked on a comprehensive full-stack project like this. Before starting on the project, 
       I had to spend a lot of time learning what was the best way to structure a full-stack like this and how to make it 
       scalable at the same time. I had to reasearch online and find out the best conventions and practices to follow, 
-      and I am glad that I have done so as I definitely feel like I have learned a lot :)`,
+      and I have definitely feel like I have learned a lot through the process :)`,
     thirdParagraph: `I plan to continue working on Wally and keep adding more features to it. I hope to make Wally available on mobile 
       devices once we have successfully tested it on the web and distribute it on the Android Play Store/Apple App Store.`,
     features: [
@@ -91,24 +203,72 @@ export const projects: Project[] = [
       "Stripe payment process integration",
     ],
     stack: getTechStack([
-      "Next.js",
-      "React",
-      "TypeScript/JavaScript",
-      "TailwindCSS",
-      "tRPC",
-      "Tanstack Query",
-      "Vercel",
-      "Clerk/NextAuth",
-      "Prisma ORM",
-      "PostgreSQL",
-      "Pinecone",
-      "OpenAI API",
-      "Stripe",
-      "React Native",
+      "nextjs",
+      "react",
+      "ts",
+      "tailwind",
+      "trpc",
+      "ts-query",
+      "vercel",
+      "clerk",
+      "prisma",
+      "psql",
+      "pinecone",
+      "openai",
+      "stripe",
     ]),
   },
   {
-    id: 2,
+    id: 3,
+    title: "Market Inspection Agent",
+    subtitle: "AI-powered real estate intelligence for CapitaLand",
+    href: "/projects/market-inspection-agent",
+    slug: "market-inspection-agent",
+    date: "2025",
+    type: "Full-stack • AI Agents",
+    description: `An agentic system that discovers industry trends, enriches companies with reliable signals,
+    and surfaces ranked real-estate opportunities. I led the team build end-to-end—from the FastAPI
+    orchestration to the React dashboard—and this project directly led to internship offers.`,
+    // homeImageUrl: "/projects/market-inspection-agent/home.png",
+    imageUrl: "/projects/market-inspection-agent/home.png",
+    imageAlt: "Market Inspection Agent — ranked opportunities dashboard",
+    githubUrl: "https://github.com/farhan-navas/market-inspection-agent",
+    firstParagraph: `Built for the CapitaLand AI Hackathon, Market Inspection Agent is an agentic pipeline
+    that continuously scans the market, enriches entities, and highlights where demand may convert into
+    tenancy. I designed the workflows and led implementation across backend, orchestration, and UI.`,
+    secondParagraph: `The backend is a Python FastAPI service that coordinates Azure AI Foundry agents via
+    Semantic Kernel and the OpenAI API. The frontend is a lightweight React + TypeScript app (Vite/SWC,
+    Tailwind, shadcn) for querying, reviewing leads, and generating status reports on demand.`,
+    thirdParagraph: `Outcomes: faster opportunity discovery, fewer manual lookups, and a repeatable pattern
+    the team can extend (new industries/regions) without re-architecting. Higher management feedback was
+    strong enough that our team received internship offers off the back of this build.`,
+    features: [
+      "Form-driven scanning by industry, region, and service needs",
+      "Multi-agent orchestration with Azure AI Foundry",
+      "Company enrichment (news, leadership, basic firmographics)",
+      "Smart ranking score for opportunities",
+      "Interactive dashboard with filters and details",
+      "On-demand status report generation per company",
+      "Retrieval chat over ingested market data",
+      "Simple deployment split: /backend (FastAPI) and /frontend (React)",
+    ],
+    stack: getTechStack([
+      "react",
+      "ts",
+      "vite",
+      "tailwind",
+      "shadcn",
+      "zod",
+      "axios",
+      "python",
+      "fastapi",
+      "azure",
+      "sm-kernel",
+      "openai",
+    ]),
+  },
+  {
+    id: 4,
     title: "Eva Task Manager",
     subtitle: "Hybrid CLI + GUI productivity powerhouse",
     href: "/projects/eva-task-manager",
@@ -137,20 +297,19 @@ export const projects: Project[] = [
       "Saving tasks to disk, (tasks are loaded when the app is started)",
       "Bye command to easily exit the app",
     ],
-    stack: getTechStack(["Java", "JavaFX", "Github Pages"]),
+    stack: getTechStack(["java", "javafx", "gh-pages"]),
   },
   {
-    id: 3,
+    id: 5,
     title: "Connect 4 Agent",
-    subtitle: "lightning-fast, alpha-beta-pruned Connect 4 champion",
+    subtitle: "Lightning-fast, alpha-beta-pruned Connect 4 champion",
     href: "/projects/connect-4",
     slug: "connect-4",
     date: "2024",
     type: "AI Agent",
     description: `The Connect 4 Agent is a simple AI Agent that can play the game Connect 4 that I made for the NUS CS2109S module. 
       The agent uses the minimax algorithm with alpha-beta pruning to make decisions.`,
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    imageUrl: "/projects/connect-4/home.png",
     imageAlt: "Connect 4 Agent in play",
     githubUrl: "https://github.com/farhan-navas/connect-4",
     firstParagraph: `The Connect 4 Agent is a simple AI Agent that can play the game Connect 4. This was a project that I was 
@@ -173,11 +332,11 @@ export const projects: Project[] = [
       "Transposition table to store previously computed positions",
       "12-move lookup table to store the best move for the first 12 moves",
     ],
-    stack: getTechStack(["Python", "C++"]),
+    stack: getTechStack(["python", "c++"]),
   },
   {
-    id: 4,
-    title: "RHOC Supper Bidding System",
+    id: 6,
+    title: "RHOC Bidding System",
     subtitle: "Real-time auction system at your fingertips",
     href: "/projects/rhoc-supper-bidding",
     slug: "rhoc-supper-bidding",
@@ -207,29 +366,27 @@ export const projects: Project[] = [
       "View the bidding history of each group",
     ],
     stack: getTechStack([
-      "Next.js",
-      "React",
-      "TypeScript/JavaScript",
-      "TailwindCSS",
-      "Tanstack Query",
-      "Vercel",
-      "Firebase Firestore",
-      "Firebase Authentication",
+      "nextjs",
+      "react",
+      "ts",
+      "tailwind",
+      "ts-query",
+      "vercel",
+      "firebase",
     ]),
   },
 
   {
-    id: 5,
-    title: "ARIMA-LSTM Sentiment Analysis",
+    id: 7,
+    title: "ETH Sentiment Analysis",
     subtitle: "ETH price forecasts powered by ARIMA & LSTM",
     href: "/projects/arima-lstm-sentiment-analysis",
     slug: "arima-lstm-sentiment-analysis",
     date: "2023/2024",
-    type: "Machine Learning/Backend",
+    type: "Machine Learning • Backend",
     description: `This is a simple model that predicts the price of ETH and Impermanent Loss. Made this together with my friends 
       for the NUS Fintech Summit 2024.`,
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80",
+    imageUrl: "/projects/sentiment-analysis/home.png",
     imageAlt: "ARIMA-LSTM Sentiment Analysis Backend in Action",
     githubUrl: "https://github.com/farhan-navas/Fintech-Hacka",
     firstParagraph: `This project is a simple ML model that was trained on a Crypto News Dataset. The model makes an API call to a crypto news
@@ -247,6 +404,6 @@ export const projects: Project[] = [
       "Predict the price of ETH and Impermanent Loss",
       "Display predictions on frontend",
     ],
-    stack: getTechStack(["Python", "Flask"]),
+    stack: getTechStack(["python", "flask"]),
   },
 ];
